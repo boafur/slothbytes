@@ -1,4 +1,4 @@
-package main
+package testing_suite
 
 import (
 	"os"
@@ -22,7 +22,7 @@ func setupLogger() *log.Logger {
 	return logger
 }
 
-func logAssert(testInput any, testOutput any, shouldEqual any, testErr error) {
+func LogAssert(testInput any, testOutput any, shouldEqual any, testErr error) {
 	log := setupLogger()
 	didAssert := testOutput == shouldEqual
 	if testErr != nil {

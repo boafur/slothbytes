@@ -3,6 +3,7 @@ package main
 import (
 	"strconv"
 	"strings"
+	test "video-length/testing_suite"
 )
 
 func toSeconds(timeString string) (int, error) {
@@ -25,6 +26,6 @@ func main() {
 	tests["121:49"] = 7309
 	for timeString, shouldEqual := range tests {
 		output, err := toSeconds(timeString)
-		logAssert(timeString, output, shouldEqual, err)
+		test.LogAssert(timeString, output, shouldEqual, err)
 	}
 }
