@@ -23,8 +23,8 @@ func main() {
 	tests["13:56"] = 836
 	tests["10:60"] = -1
 	tests["121:49"] = 7309
-	for i, v := range tests {
-		output, err := toSeconds(i)
-		logAssert(i, output, v, err)
+	for timeString, shouldEqual := range tests {
+		output, err := toSeconds(timeString)
+		logAssert(timeString, output, shouldEqual, err)
 	}
 }
