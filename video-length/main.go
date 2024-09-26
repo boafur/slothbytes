@@ -6,7 +6,7 @@ import (
 	test "video-length/testing_suite"
 )
 
-func toSeconds(timeString string) (int, error) {
+func minutesToSeconds(timeString string) (int, error) {
 	minutes, err := strconv.Atoi(strings.Split(timeString, ":")[0])
 	seconds, err := strconv.Atoi(strings.Split(timeString, ":")[1])
 
@@ -25,7 +25,7 @@ func main() {
 	tests["10:60"] = -1
 	tests["121:49"] = 7309
 	for timeString, shouldEqual := range tests {
-		output, err := toSeconds(timeString)
+		output, err := minutesToSeconds(timeString)
 		test.LogAssert(timeString, output, shouldEqual, err)
 	}
 }
